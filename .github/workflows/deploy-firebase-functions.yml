@@ -22,9 +22,6 @@ jobs:
       - name: Instalar Firebase CLI
         run: npm install -g firebase-tools
 
-      - name: Autenticar no Firebase
-        run: firebase login:ci --token "${{ secrets.FIREBASE_TOKEN }}"
-
       - name: Instalar dependências do Python
         run: |
           python -m venv venv
