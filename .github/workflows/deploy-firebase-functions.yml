@@ -24,10 +24,9 @@ jobs:
 
       - name: Instalar dependências do Python
         run: |
-          python -m venv venv
-          source venv/bin/activate
+          python -m venv functions/venv
+          source functions/venv/bin/activate
           pip install -r functions/requirements.txt
-        working-directory: ./functions
 
       - name: Deploy das Cloud Functions
         run: |
