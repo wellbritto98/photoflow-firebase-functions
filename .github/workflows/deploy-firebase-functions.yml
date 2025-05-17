@@ -6,16 +6,17 @@ on:
 
 jobs:
   deploy:
-    name: Deploy
+    name: Deploy to Firebase
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout Repo
-        uses: actions/checkout@master
+        uses: actions/checkout@v3
+
       - name: Deploy to Firebase
-        uses: gannonk08/firebase-action-python@v0.0.1
+        uses: docker://gannonk/firebase-action-python:master
         with:
           args: deploy --only functions --debug
         env:
           CREATE_VENV: true
-          PROJECT_PATH: functions
-          GCP_SA_KEY: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_KEY }}
+          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
