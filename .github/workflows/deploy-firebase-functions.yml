@@ -30,4 +30,4 @@ jobs:
 
       - name: Deploy das Cloud Functions
         run: |
-          firebase deploy --only functions --project ${{ secrets.FIREBASE_PROJECT_ID }} --token "${{ secrets.FIREBASE_TOKEN }}"
+          firebase deploy --only functions --project ${{ secrets.FIREBASE_PROJECT_ID }} --token "${{ secrets.FIREBASE_TOKEN }}" --force
